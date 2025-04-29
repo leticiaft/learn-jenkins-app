@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Hello World'
+                sh 'npm install'
+                sh 'npm run build'
             }
         }
 
@@ -12,6 +13,7 @@ pipeline {
             steps {
                 sh 'test -f build/index.html'
             }
-         }    
+        }    
     }
 }
+
